@@ -2,267 +2,36 @@
 <html ng-app="myApp">
 
   <head>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-    <script src="angular.min.js"></script>
-    <script src="angular-animate.js"></script>
-    <script src="swipe.min.js"></script>
-    <style type="text/css">
-        .box{
-            width: 320px;
-            height: 480px;
-            border: 1px solid;
-        }
+    
+    <link href="css/app.css" media="screen" rel="stylesheet" type="text/css" />
 
-       /* .sample-show-hide {
-            
-          }
-
-          .sample-show-hide.ng-hide-add{
-            -webkit-transition:all linear 0s;
-            -moz-transition:all linear 0s;
-            -o-transition:all linear 0s;
-            transition:all linear 0s;
-            display:block!important;
-          }
-          .sample-show-hide.ng-hide-remove {
-            -webkit-transition:all ease-in-out 0.3s;
-            -moz-transition:all ease-in-out 0.3s;
-            -o-transition:all ease-in-out 0.3s;
-            transition:all ease-in-out 0.3s;
-            display:block!important;
-          }
-
-          .sample-show-hide.ng-hide-add.ng-hide-add-active,
-          .sample-show-hide.ng-hide-remove {
-            opacity:0;
-          }
-
-          .sample-show-hide.ng-hide-add,
-          .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
-            opacity:1;
-          }*/
-
-
-
-       /*   .animate-switch-container {
-  position:relative;
-  background:white;
- 
-  height:480px;
-  overflow:hidden;
-}
-
-.animate-switch {
-  padding:10px;
-}
-
-.animate-switch.ng-animate {
-  -webkit-transition:all linear 0.3s;
-  transition:all linear 0.3s;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-}
-
-.animate-switch.ng-leave.ng-leave-active,
-.animate-switch.ng-enter {
-  top:480px;
-}
-.animate-switch.ng-leave,
-.animate-switch.ng-enter.ng-enter-active {
-  top:0;
-}*/
-
-.slide-left.ng-enter,
-.slide-left.ng-leave,
-.slide-right.ng-enter,
-.slide-right.ng-leave,
-.slide-up.ng-enter,
-.slide-up.ng-leave,
-.slide-down.ng-enter,
-.slide-down.ng-leave {
-  -webkit-transition: 0.5s ease-in-out ;
-  -moz-transition: 0.5s ease-in-out ;
-  -o-transition: 0.5s ease-in-out ;
-  transition: 0.5s ease-in-out ;
-  position: absolute;
-  width: 320px;
-}
-.slide-left.ng-enter {
-  /*z-index: 100;*/
-  left: 320px;
-}
-.slide-left.ng-enter.ng-enter-active {
-  left: 0;
-  right: 0;
-}
-.slide-left.ng-leave {
-  /*z-index: 101;*/
-  left: 0;
-}
-.slide-left.ng-leave.ng-leave-active {
-  left: -320px;
-}
-
-.slide-right.ng-enter {
- /* z-index: 100;*/
-  left: -320px;
-}
-.slide-right.ng-enter.ng-enter-active {
-  left: 0;
-}
-.slide-right.ng-leave {
-  /*z-index: 101;*/
-  left: 0;
-}
-.slide-right.ng-leave.ng-leave-active {
-  left: 320px;
-}
-
-.slide-up.ng-enter {
-  /*z-index: 100;*/
-  top: 480px;
-}
-.slide-up.ng-enter.ng-enter-active {
-  top: 0;
-  bottom: 0;
-}
-.slide-up.ng-leave {
-  /*z-index: 101;*/
-  top: 0;
-}
-.slide-up.ng-leave.ng-leave-active {
-  top: -480px;
-}
-
-.slide-down.ng-enter {
-  /*z-index: 100;*/
-  top: -480px;
-}
-.slide-down.ng-enter.ng-enter-active {
-  top: 0;
-  bottom: 0;
-}
-.slide-down.ng-leave {
-  /*z-index: 101;*/
-  top: 0;
-}
-.slide-down.ng-leave.ng-leave-active {
-  top: 480px;
-}
-    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/swipe.min.js"></script>
+    <script src="js/main.js"></script>
+    
   </head>
 
   <body>
-    <div ng-controller="MyCtrl">
-      
-     <!--  <div class="box" ng-swipe-up ng-swipe-down ng-swipe-left ng-swipe-right>
-        <img ng-src="{{imgSrc}}">
-      </div> -->
-
-     
-          
-          <div class="animate-switch-container"
-            ng-switch on="imgSrc" ng-swipe-up ng-swipe-down ng-swipe-left ng-swipe-right>
-              
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/1-1.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/1-2.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/1-3.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/1-4.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/2-1.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/2-2.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/2-3.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/2-4.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/3-1.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/3-2.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/3-3.jpg">
-              <img ng-src="{{imgSrc}}" ng-class="slideDir" class="animate-switch" ng-switch-when="images/3-4.jpg">
-
+    <div ng-controller="MyCtrl">          
+          <!-- <div class="animate-switch-container"
+            ng-switch on="imgSrc" ng-swipe-up ng-swipe-down ng-swipe-left ng-swipe-right>              
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/1-1.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/1-2.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/1-3.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/1-4.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/2-1.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/2-2.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/2-3.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/2-4.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/3-1.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/3-2.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/3-3.jpg">
+              <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/3-4.jpg">
+          </div>     -->
+          <div ng-swipe-up ng-swipe-down ng-swipe-left ng-swipe-right>
+            <img ng-repeat="imgPath in imgArr" ng-src="{{imgSrc}}" ng-class="slideDir" ng-if="imgPath == imgSrc">
           </div>
-       
-
-
-     <!--  <label>
-          <input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> Is Visible...
-        </label>
-        <div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
-          <img ng-src="{{imgSrc}}">
-        </div> -->
     </div>
-
-
-
-
-
-
-    <script type="text/javascript">
-        var myApp = angular.module('myApp',['ngAnimate','swipe']); 
-
-
-        function MyCtrl($scope) {
-
-           $scope.category = 1;
-           $scope.img = 1;
-           $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg"
-            
-           $scope.wipeHandler = function(dir){
-            
-            if(dir =="swipeup"){
-                $scope.slideDir = 'slide-up';
-                if($scope.img != 1){
-                    $scope.img = $scope.img - 1;
-                    $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }else{
-                   $scope.img = 4; 
-                   $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }
-            }
-            if(dir =="swipedown"){   
-                $scope.slideDir = 'slide-down';             
-                //$scope.checked = false;                
-                if($scope.img != 4){
-                    $scope.img = $scope.img + 1;
-                    $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                    $scope.checked = true;
-                }else{
-                   $scope.img = 1; 
-                   $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                   $scope.checked = true;
-                }
-                
-
-            }
-            if(dir =="swipeleft"){
-                $scope.slideDir = 'slide-left';    
-                if($scope.category != 3){
-                    $scope.category = $scope.category + 1;
-                    $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }else{
-                   $scope.category = 1; 
-                   $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }
-
-            }
-            if(dir =="swiperight"){
-                 $scope.slideDir = 'slide-right';
-                if($scope.category != 1){
-                    $scope.category = $scope.category - 1;
-                    $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }else{
-                   $scope.category = 3; 
-                   $scope.imgSrc = "images/"+ $scope.category +"-"+ $scope.img +".jpg";
-                }
-
-            }    
-           }
-        }
-
-
-    </script>
-
   </body>
-
 </html>
