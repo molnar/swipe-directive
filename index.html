@@ -30,7 +30,7 @@
               <img ng-src="{{imgSrc}}" ng-class="slideDir" ng-switch-when="images/3-4.jpg">
           </div>     -->
           <div ng-swipe-up ng-swipe-down ng-swipe-left ng-swipe-right>
-            <img ng-repeat="imgPath in imgArr" ng-src="{{imgSrc}}" ng-class="slideDir" ng-if="imgPath == imgSrc">
+            <img ng-repeat="imgPath in imgArr" ng-src="{{imgSrc}}" ng-class="slideDir" height="1280" height="720" ng-if="imgPath == imgSrc">
           </div>
     </div>
   </body>
